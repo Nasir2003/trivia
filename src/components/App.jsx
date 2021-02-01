@@ -2,14 +2,45 @@ import React, { Component, useState } from "react";
 import "../css/App.css";
 import data from "../sample_data.json";
 
-let currentQuestion = 0;
-
-function App() { 
 
 
+
+function Question(props) { 
+
+    return(
   
-  return <div className="app">Trivia!</div>;  
-  return <div className="Question">Question goes here</div>; 
+  <div> 
+  {props.name}
+  <Answer name="Answer goes here"/>
+  </div> 
+    )
+} 
+
+function NextQuestion(props) { 
+
+  return<button>Next Question</button>;
+} 
+
+function Answer(props) { 
+
+  return<div>{props.name}</div>;
+}
+
+
+function App() {  
+
+let currentQuestion = 0;
+  
+return (   
+
+
+  <div className="app"> 
+  <h1>Trivia</h1>
+      <Question name={data[0].question.text}/>   
+      <NextQuestion/>
+  </div>  
+)
+   
 } 
 
 
