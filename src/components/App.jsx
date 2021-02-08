@@ -11,7 +11,10 @@ function Question(props) {
   
   <div> 
   {props.name}
-  <Answer name="Answer goes here"/>
+  <Answer name={props.Answername[0]}/> 
+  <Answer name={props.Answername[1]}/> 
+  <Answer name={props.Answername[2]}/> 
+  <Answer name={props.Answername[3]}/>
   </div> 
     )
 } 
@@ -36,10 +39,14 @@ return (
 
   <div className="app"> 
   <h1>Trivia</h1>
-      <Question name={data[0].question.text}/>   
+      <Question name={data[0].question.text} Answername={data[0].question.choices}/>
+
+
       <NextQuestion/>
   </div>  
-)
+) 
+
+
    
 } 
 
