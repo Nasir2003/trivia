@@ -9,15 +9,17 @@ function Question(props) {
 
     return(
   
-  <div> 
-  {props.name}
-  <Answer name={props.Answername[0]}/> 
-  <Answer name={props.Answername[1]}/> 
-  <Answer name={props.Answername[2]}/> 
-  <Answer name={props.Answername[3]}/>
-  </div> 
-    )
-} 
+  <div>{props.name}   
+{
+  props.Answername.map((Answername) => { 
+    return ( 
+      <Answer name={Answername} />   
+      ) 
+  }) 
+}
+    </div>  
+    );
+}
 
 function NextQuestion(props) { 
 
@@ -26,8 +28,9 @@ function NextQuestion(props) {
 
 function Answer(props) { 
 
-  return<div>{props.name}</div>;
-}
+  return<div>{props.name}</div>; 
+
+} 
 
 
 function App() {  
