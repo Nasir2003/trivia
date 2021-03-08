@@ -35,17 +35,28 @@ function Answer(props) {
 
 function App() {  
 
-let currentQuestion = 0;
+let currentQuestion = 0; 
+
+[isAnswered, setIsAnswered] = useState(true);
   
-return (   
+return ( 
 
+  <div className="app">   
 
-  <div className="app"> 
+  
+
   <h1>Trivia</h1>
       <Question name={data[0].question.text} Answername={data[0].question.choices}/>
 
 
-      <NextQuestion/>
+      <NextQuestion/> 
+
+      <button onClick={ 
+    () => setIsAnswered(isAnswered + "The correct answer is..."  ) 
+      }>  
+      {isAnswered}
+    </button>  
+    
   </div>  
 ) 
 
